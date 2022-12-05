@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     jobProvider = JobProvider(jobsRepo);
     jobProvider.getJobDetails(
         "https://ptj.sej.co.jp/arbeit/recruitment/jobfind-ml-pc/en/area/KyushuOkinawa/Fukuoka");
-    
+
     super.initState();
   }
 
