@@ -34,10 +34,16 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: ChangeNotifierProvider(
-      create: (BuildContext context) => jobProvider,
-      child: const DetailedScreen(),
-    ));
+        return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) =>  jobProvider)
+      ],
+      child: MaterialApp(
+        routes: {"/": (context) => HomePage(),
+        "/homescreen" :(context) => HomeScreen(),
+        "/detailedscreen" :(context) => DetailedScreen()},
+      ),
+    );
+
   }
 }
